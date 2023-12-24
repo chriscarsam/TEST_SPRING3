@@ -1,6 +1,6 @@
 package com.sam.course.springboot.webapp.springbootweb.controllers;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -24,10 +24,14 @@ public class UserController {
 
     @GetMapping("/list")
     public String list(ModelMap model){
-        List<User> users = new ArrayList<>();
+        List<User> users = Arrays.asList(
+            new User("Pepe", "Gonzalez"),
+            new User("Lalo", "Perez", "lalo@email.com"),
+            new User("Juanita", "Roe", "juanita@email.com"),
+            new User("Charly", "Test"));
 
         model.addAttribute("users", users);
-        model.addAttribute("title", "List of users");
+        model.addAttribute("title", "List of users!");
         return "list";
     }
 }
