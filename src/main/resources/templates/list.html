@@ -10,7 +10,7 @@
 
     <div th:if="${users.isEmpty()}" th:text="${'You have no user elements!'}"></div>
 
-    <table>
+    <table th:if="${not users.isEmpty()}">
         <thead>
             <tr>
                 <th>name</th>
@@ -25,6 +25,6 @@
                 <td th:if="${user.email}" th:text="${user.email}"></td>
                 <td th:if="${user.email==null}" th:text="${' - '}"></td>
             </tr>
-        </tbo'n/a'table>
+    </table>
 </body>
 </html>
